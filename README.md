@@ -1,5 +1,5 @@
 # scripts-for-linux-administration
-i will create some my ideas that i think can be useful
+i will create some my ideas that i think can be useful for linux administration
 
 
 basictasks.sh
