@@ -1,0 +1,16 @@
+#Author: Dusan Djordjevic [dushandjordjevic@protonmail.com]
+#Created: 15-7-2021
+#Description: Prints info of memory in format
+#!/bin/bash
+
+memf=$(free -h | grep Mem | tr -s " " '_')
+TOTAL=$(echo $memf | cut -d '_' -f 2)
+USED=$(echo $memf | cut -d '_' -f 3)
+FREE=$(echo $memf | cut -d '_' -f 4)
+SHAR=$(echo $memf | cut -d '_' -f 5)
+CACH=$(echo $memf | cut -d '_' -f 6)
+
+PRINT=$(echo "Total:$TOTAL";echo "Used:$USED";echo "Free:$FREE";echo "Shar:$SHAR";echo "Cache:$CACH")
+echo "$PRINT" | tr -s "\n" ' '
+
+exit 0
