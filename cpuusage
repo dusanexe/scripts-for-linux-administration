@@ -1,0 +1,8 @@
+#Author: Dusan dushandjordjevic@protonmail.com
+#Description: prints cpu usage from processes read from top
+#Date created: 05/07/2021
+
+#!/bin/sh
+tops=$(top -o "%CPU" | head -n 12 | tail -n 5 | sed 's/  */ /g' | cut -d ' ' -f 10 | awk '{ sum +=$1} END {print sum}')
+
+echo " CPU: $tops %"
