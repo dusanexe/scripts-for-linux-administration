@@ -1,0 +1,2 @@
+#!/bin/sh
+sensors -A | grep Core | cut -d ' ' -f 1,2,10,11 | tr -d '\n'
